@@ -1,0 +1,13 @@
+{
+  "name": "imageprocessor-module",
+  "version": "1.0.0",
+  "description": "Node addon with opencv",
+  "scripts": {
+    "install": "cmake-js compile -r electron -v 5.0.4 -a x64"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "cmake-js": "^5.2.0",
+    "nan": "^2.14.0"
+  }
+}
