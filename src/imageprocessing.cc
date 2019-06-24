@@ -1,4 +1,5 @@
 
+#include "opencv2/opencv.hpp"
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <iostream>
@@ -83,20 +84,21 @@ Mat merge_images(Mat image, int pt1, int pt2) {
 
 string ResizeImageC() {
 
-    string imagePath = "high-res.jpg";
+    // string imagePath = "~/high-res.jpg";
     
-    Mat image;
-    image = imread(imagePath, cv::IMREAD_COLOR);
+    // Mat image;
+    // image = imread(imagePath, cv::IMREAD_COLOR);
 
-    if(! image.data ) {
-        return "Could not open or find the image";
-    }
+    // if(! image.data ) {
+    //     return "Could not open or find the image";
+    // }
 
-    Mat resized = resize(image);
-    pair <int, int> points = find_points(resized);
-    Mat merged = merge_images(resized, get<0>(points), get<1>(points));
-    imwrite("processedImage.jpeg", merged);
-    return imagePath;
+    // Mat resized = resize(image);
+    // pair <int, int> points = find_points(resized);
+    // Mat merged = merge_images(resized, get<0>(points), get<1>(points));
+    // imwrite("~/processedImage.jpeg", merged);
+
+    return CV_VERSION;
 }
 
 NAN_METHOD(ResizeImage) {
