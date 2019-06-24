@@ -1,6 +1,7 @@
 
 #include <opencv2/highgui.hpp>
-#include "opencv2/imgproc/imgproc.hpp"
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/objdetect.hpp>
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -83,7 +84,7 @@ Mat merge_images(Mat image, int pt1, int pt2) {
 
 string ResizeImageC() {
 
-    string imagePath = "/Users/sisir/cosmos/repo/experiments/imageprocessor-module/high-res.jpg";
+    string imagePath = "high-res.jpg";
     
     Mat image;
     image = imread(imagePath, cv::IMREAD_COLOR);
@@ -95,7 +96,7 @@ string ResizeImageC() {
     Mat resized = resize(image);
     pair <int, int> points = find_points(resized);
     Mat merged = merge_images(resized, get<0>(points), get<1>(points));
-    imwrite("/Users/sisir/Downloads/imagemerged.jpeg", merged);
+    imwrite("processedImage.jpeg", merged);
     return imagePath;
 }
 
