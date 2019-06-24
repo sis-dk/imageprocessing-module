@@ -1,3 +1,1 @@
-const imageprocessing = require("bindings")("imageprocessing");
-
-console.log(imageprocessing.ResizeImage())
+module.exports = require("bindings")("imageprocessing");
