@@ -6,20 +6,10 @@ set("OpenCV_INCLUDE_DIRS" "/usr/local/opencv/include/opencv4")
 
 project(imageprocessing)
 
-# find_package(OpenCV REQUIRED)
-
-message( "The opencv dir issss" )
-message( ${OpenCV_DIR} )
-message( "The opencv includes areeeeeee" )
-message( ${OpenCV_INCLUDE_DIRS} )
-
 file(GLOB opencv_libss "/usr/local/opencv/lib/*.a" "/usr/local/opencv/lib/opencv4/3rdparty/*.a")
 
-message( "The opencv libs areeeeeee" )
-message( ${opencv_libss} )
-
 file(GLOB SOURCE_FILES "src/*.cc" "src/*.h")
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
 
