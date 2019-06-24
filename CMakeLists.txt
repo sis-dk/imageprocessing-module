@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++ -fPIC")
-set(CMAKE_EXE_LINKER_FLAGS "-static")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++")
 set("OpenCV_DIR" "/usr/local/opencv/lib/cmake/opencv4")
 set("OpenCV_INCLUDE_DIRS" "/usr/local/opencv/include/opencv4")
 
@@ -14,7 +13,7 @@ message( ${OpenCV_DIR} )
 message( "The opencv includes areeeeeee" )
 message( ${OpenCV_INCLUDE_DIRS} )
 
-file(GLOB opencv_libss "/usr/local/opencv/lib/*.a")
+file(GLOB opencv_libss "/usr/local/opencv/lib/*.a" "/usr/local/opencv/lib/opencv4/3rdparty/*.a")
 
 message( "The opencv libs areeeeeee" )
 message( ${opencv_libss} )
